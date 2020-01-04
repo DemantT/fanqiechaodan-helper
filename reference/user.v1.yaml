@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Accounts api
+  version: '1.0'
+  description: Accounts
+  contact:
+    name: Team Brandy
+servers:
+  - url: 'http://localhost:8080/v1/user'
+    description: local
+paths:
+  /create:
+    post:
+      summary: create user
+      operationId: post-create
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  token:
+                    type: string
+              examples:
+                example:
+                  value:
+                    id: myq3q@qq.com
+                    token: FBkxEuE+x0UbWlG2bxPUKvOD2LNrtGa0QMJma93uKdU7HiBcqDXdVT6c7EQwDKZk/RZWn5DvWexgn1tfYm2DTfLWv7MwHm8E
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+            examples:
+              example:
+                value:
+                  username: myq3q@qq.com
+                  password: '1234'
+  '/:uid':
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ''
+        '':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user.response'
+              examples:
+                example:
+                  value:
+                    id: myq3q@qq.com
+                    token: FBkxEuE+x0UbWlG2bxPUKvOD2LNrtGa0QMJma93uKdU7HiBcqDXdVT6c7EQwDKZk/RZWn5DvWexgn1tfYm2DTfLWv7MwHm8E
+      summary: get user
+    parameters: []
+  /login:
+    post:
+      summary: login
+      operationId: post-login
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user.response'
+              examples:
+                example:
+                  value:
+                    id: myq3q@qq.com
+                    token: FBkxEuE+x0UbWlG2bxPUKvOD2LNrtGa0QMJma93uKdU7HiBcqDXdVT6c7EQwDKZk/RZWn5DvWexgn1tfYm2DTfLWv7MwHm8E
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+            examples:
+              example:
+                value:
+                  username: myq3q@qq.com
+                  password: '1234'
+components:
+  schemas:
+    user.response:
+      title: user.response
+      type: object
+      properties:
+        id:
+          type: string
+        token:
+          type: string
+      x-examples:
+        example:
+          id: myq3q@qq.com
+          token: FBkxEuE+x0UbWlG2bxPUKvOD2LNrtGa0QMJma93uKdU7HiBcqDXdVT6c7EQwDKZk/RZWn5DvWexgn1tfYm2DTfLWv7MwHm8E
+  securitySchemes: {}
