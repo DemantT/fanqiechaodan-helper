@@ -33,5 +33,28 @@ paths:
             schema:
               type: object
               properties: {}
+      description: ''
+  /reply:
+    post:
+      summary: ''
+      operationId: post-reply
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  return_message:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
 components:
   schemas: {}
