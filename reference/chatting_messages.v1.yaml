@@ -35,7 +35,7 @@ paths:
               properties: {}
       description: ''
     parameters: []
-  /reply:
+  /send:
     post:
       summary: ''
       operationId: post-reply
@@ -59,5 +59,6 @@ paths:
                   type: string
                 user_id:
                   type: string
+    parameters: []
 components:
   schemas: {}
