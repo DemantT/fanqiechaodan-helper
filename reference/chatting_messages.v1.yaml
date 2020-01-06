@@ -6,7 +6,7 @@ servers:
   - url: 'http://localhost:3000/v1/chatting_messages'
     description: local
 paths:
-  /all:
+  '/all/:user_id':
     get:
       summary: Your GET endpoint
       tags: []
@@ -34,6 +34,7 @@ paths:
               type: object
               properties: {}
       description: ''
+    parameters: []
   /reply:
     post:
       summary: ''
@@ -55,6 +56,8 @@ paths:
               type: object
               properties:
                 message:
+                  type: string
+                user_id:
                   type: string
 components:
   schemas: {}
