@@ -49,6 +49,15 @@ paths:
                 properties:
                   return_message:
                     type: string
+                  opiton:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        display:
+                          type: string
+                        code:
+                          type: string
       requestBody:
         content:
           application/json:
@@ -59,6 +68,32 @@ paths:
                   type: string
                 user_id:
                   type: string
+                code:
+                  type: string
     parameters: []
+  /reply_option:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  return_message:
+                    type: string
+                  option:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        display:
+                          type: string
+                        code:
+                          type: string
+      operationId: get-reply_option
 components:
   schemas: {}
