@@ -3,7 +3,7 @@ info:
   title: messages
   version: '1.0'
 servers:
-  - url: 'http://localhost:3000/v1/messages'
+  - url: 'http://localhost:3000/v1/chatting_messages'
     description: local
 paths:
   /all:
