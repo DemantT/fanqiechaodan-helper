@@ -67,7 +67,7 @@ paths:
                 message:
                   type: string
                 user_id:
-                  type: string
+                  type: integer
                 code:
                   type: string
     parameters: []
