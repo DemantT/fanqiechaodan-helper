@@ -58,6 +58,8 @@ paths:
                           type: string
                         code:
                           type: string
+                        return_type:
+                          type: string
       requestBody:
         content:
           application/json:
@@ -93,6 +95,8 @@ paths:
                         display:
                           type: string
                         code:
+                          type: string
+                        return_type:
                           type: string
       operationId: get-reply_option
 components:
